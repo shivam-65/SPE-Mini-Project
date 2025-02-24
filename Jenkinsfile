@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    dockerImage = docker.build("${DOCKER_IMAGE_NAME}", '.')
+                    dockerImage = docker.build("shivampadaliya/spe_mini_project:latest", '.')
                 }
             }
         }
