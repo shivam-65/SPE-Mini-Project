@@ -37,6 +37,18 @@ pipeline {
             }
         }
 
+        stage('Run Ansible Playbook') {
+                steps {
+                    script {
+                      withEnv(["ANSIBLE_HOST_KEY_CHECKING=False"]) {
+                        ansiblePlaybook(
+                            playbook: 'deploy.yml',
+                            inventory: 'inventory'
+                        )
+                    }
+                }
+        }
+
 }
  post {
         success {
