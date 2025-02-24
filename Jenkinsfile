@@ -51,12 +51,19 @@ pipeline {
     }
 
 }
- post {
+post {
         success {
-            echo 'Build and deployment successful!'
+            mail to: 'shivampadaliya1@gmail.com',
+                 subject: "Application Deployment SUCCESS: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "The build was successful!"
         }
         failure {
-            echo 'Build failed!'
+            mail to: 'shivampadaliya1@gmail.com',
+                 subject: "Application Deployment FAILURE: Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "The build failed."
         }
-    }
+        always {
+            cleanWs()
+        }
+      }
 }
