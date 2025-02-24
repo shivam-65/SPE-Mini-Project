@@ -1,0 +1,40 @@
+---
+- name: Pull Docker Image from Docker Hub
+  hosts: localhost
+  remote_user: shivam
+  become: false
+  tasks:
+    #    - name: Install pip3
+    #      apt:
+    #        name: python3-pip
+    #        state: present
+    #        update_cache: yes
+    #
+    #    - name: Install Python Docker SDK
+    #      pip:
+    #        name: docker
+    #        executable: pip3
+
+    - name: Pull Docker Image
+      docker_image:
+        name: "shivampadaliya/spe_mini_project"
+        source: pull
+      register: docker_pull_result
+
+    - name: Display Docker Pull Result
+      debug:
+        var: docker_pull_result
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+
+    - name: Stop and removing existing container if it is running #Add this because if same name container is running
+      shell: |
+        docker stop spe_mini_project || true
+        docker rm spe_mini_project || true
+      ignore_errors: yes
+
+    - name: Running container
+      shell: docker run -it -d --name spe_mini_project shivampadaliya/spe_mini_project:latest
