@@ -4,7 +4,7 @@ pipeline {
       githubPush()
    }
     environment {
-        DOCKER_IMAGE_NAME = 'simple-calculator'
+        DOCKER_IMAGE_NAME = 'spe_mini_project'
         GITHUB_REPO_URL = 'https://github.com/shivam-65/SPE-Mini-Project.git'
     }
 
