@@ -89,9 +89,7 @@ public class Main {
         return result;
     }
     public static double logar(double number1) {
-        
         double result = Math.log(number1);
-        
         return result;
     }
 }
