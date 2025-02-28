@@ -68,13 +68,15 @@ public class Main {
         if (number1 > 0) {
             result = Math.sqrt(number1);
         } else {
-            result = 0;
+            return Double.NaN;
         }
         
         return result;
     }
     public static double fact(double number1) {
-        
+
+        if(number1<0)return -1;
+
         double result = 1;
         for (int i = 1; i <= number1; i++) {
             result *= i;
@@ -89,6 +91,7 @@ public class Main {
         return result;
     }
     public static double logar(double number1) {
+        if(number1<=0)return Double.NaN;
         double result = Math.log(number1);
         return result;
     }
