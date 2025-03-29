@@ -6,6 +6,7 @@ COPY pom.xml .
 COPY src ./src
 
 RUN mvn clean package
+RUN mvn test
 
 
 FROM openjdk:17

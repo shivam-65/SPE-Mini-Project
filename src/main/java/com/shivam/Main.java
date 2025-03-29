@@ -10,9 +10,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         double number = 0.0, number1 = 0.0, number2 = 0.0;
         do {
-            System.out.println("Welcome to the devops Calculator....\nPlease select the operation...\n\n");
+            System.out.println("\nWelcome to the devops Calculator....\nPlease select the operation...\n");
             System.out.print("Press 1 to Square Root\nPress 2 to Factorial\nPress 3 to Logarithm\nPress 4 to Power\n" +
-                    "Press any other key to exit\n\n\nEnter your choice: ");
+                    "Press any other key to exit\nEnter your choice: ");
             int choice;
             try {
                 choice = scanner.nextInt();

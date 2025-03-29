@@ -2,7 +2,6 @@ package com.shivam;
 
 import junit.framework.TestCase;
 import org.junit.Assert;
-import org.junit.Test;
 
 public class MainTest extends TestCase {
 
