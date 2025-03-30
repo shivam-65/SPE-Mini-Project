@@ -8,7 +8,7 @@ public class MainTest extends TestCase {
 
     public void test_sqrt_positive() {
         double x = 4.0;
-        double expectedResult = 2.0;
+        double expectedResult = 3.0;
         Assert.assertEquals(expectedResult, Main.root(x), 0.001);
     }
 
